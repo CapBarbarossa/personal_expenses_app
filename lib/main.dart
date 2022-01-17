@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import './models/transaction_data.dart';
 import 'package:personal_expenses_app/widgets/chart.dart';
 import 'package:personal_expenses_app/widgets/new_transaction.dart';
 
 import 'models/transaction.dart';
 import 'widgets/transaction_list.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -47,128 +55,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<Transaction> _userTransactions = [
-    Transaction(
-      id: 't1',
-      title: 'Shoes',
-      amount: 69.99,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Groceries',
-      amount: 15.51,
-      date: DateTime.now(),
-    ),
-  ];
+  final List<Transaction> _userTransactions = txs;
 
   List<Transaction> get _recentTransactions {
     return _userTransactions.where((tx) {
